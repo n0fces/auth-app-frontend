@@ -1,0 +1,33 @@
+# Ignore build output directories
+build/
+
+# Ignore node modules
+node_modules/
+
+# Ignore specific configuration files
+*.config.*
+tsconfig.json
+
+# Ignore environment variables files
+.env
+.env.*
+
+# Ignore lock files
+package.json
+package-lock.json
+
+# Ignore logs
+*.log
+
+# Ignore compiled files
+*.min.js
+*.min.css
+
+# Ignore specific file types
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# Ignore other generated files
+coverage/

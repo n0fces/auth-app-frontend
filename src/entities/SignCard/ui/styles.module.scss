@@ -1,0 +1,43 @@
+.signCard {
+	row-gap: 1.5rem;
+
+	margin: 0 auto;
+
+	max-width: 37.5rem;
+	padding: 1.25rem;
+
+	> * {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+.breakLine {
+	font-size: 1rem;
+	text-align: center;
+	position: relative;
+	color: var(--secondary-color-text);
+
+	span {
+		width: 2rem;
+	}
+
+	&::after,
+	&::before {
+		content: '';
+		height: 0.03125rem;
+		width: calc(50% - 1rem);
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background-color: currentColor;
+	}
+
+	&::after {
+		left: 0;
+	}
+
+	&::before {
+		right: 0;
+	}
+}

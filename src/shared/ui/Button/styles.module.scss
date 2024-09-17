@@ -1,0 +1,73 @@
+.button {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: var(--border-radius-form-comp);
+	color: #fff;
+}
+
+.submit,
+.submitted,
+.facebook,
+.google,
+.logout,
+.disabled {
+	height: 2.5rem;
+	padding: 0rem 1rem;
+}
+
+.submit {
+	background-color: #0171d3;
+
+	&:hover,
+	&:focus {
+		background-color: #005fb1;
+	}
+}
+
+.submitted {
+	background-color: #02c359;
+
+	&:hover,
+	&:focus {
+		background-color: #02a84c;
+	}
+}
+
+.facebook {
+	background-color: #4267b2;
+
+	&:hover,
+	&:focus {
+		background-color: #2f4e8d;
+	}
+}
+
+.google {
+	color: var(--secondary-color-text);
+	border: var(--border);
+
+	&:hover,
+	&:focus {
+		background-color: var(--secondary-color-text-opacity);
+	}
+}
+
+.logout {
+	background-color: #c30202;
+
+	&:hover,
+	&:focus {
+		background-color: #990000;
+	}
+}
+
+.disabled {
+	cursor: default;
+	background-color: #8f8f8f;
+
+	&:hover,
+	&:focus {
+		background-color: #7e7e7e;
+	}
+}
