@@ -1,0 +1,39 @@
+.image {
+	position: relative;
+	font-size: inherit;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	&::before {
+		content: '';
+		width: 100%;
+		height: 100%;
+		background-color: #7b7b7b;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&::after {
+		content: '\2639' ' ' attr(alt);
+		display: inline-block;
+		margin: auto;
+
+		width: 75%;
+		height: 50%;
+		text-overflow: ellipsis;
+		overflow: hidden;
+
+		color: rgb(100, 100, 100);
+
+		position: absolute;
+		z-index: 2;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.imageCap {
+	background-color: #7b7b7b;
+}

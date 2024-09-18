@@ -1,5 +1,9 @@
 .grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, 300px);
+	grid-template-columns: repeat(auto-fit, 200px);
 	gap: 2rem;
+}
+
+.figcaption {
+	padding: 0.5rem;
 }

@@ -33,3 +33,18 @@ a {
 	row-gap: 0.5rem;
 	color: var(--secondary-color-text);
 }
+
+.animation {
+	background: linear-gradient(-90deg, #f0f0f05e 0%, #f8f8f81e 50%, #f0f0f05e 100%);
+	background-size: 400% 400%;
+	animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+	0% {
+		background-position: 0% 0%;
+	}
+	100% {
+		background-position: -135% 0%;
+	}
+}
