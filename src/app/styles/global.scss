@@ -5,6 +5,7 @@ body {
 	font-size: $fontSize;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background-color: $mainBackgroundColor;
 }
 
 input,
@@ -35,7 +36,12 @@ a {
 }
 
 .animation {
-	background: linear-gradient(-90deg, #f0f0f05e 0%, #f8f8f81e 50%, #f0f0f05e 100%);
+	background: linear-gradient(
+		-90deg,
+		#f0f0f05e 0%,
+		#f8f8f81e 50%,
+		#f0f0f05e 100%
+	);
 	background-size: 400% 400%;
 	animation: pulse 2s ease-in-out infinite;
 }

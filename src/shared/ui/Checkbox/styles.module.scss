@@ -1,0 +1,46 @@
+.label {
+	display: inline-flex;
+	align-items: center;
+	column-gap: 0.5em;
+}
+
+.checkbox {
+	position: absolute;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.checkmark {
+	width: 0.6em;
+	height: 0.6em;
+
+	box-shadow: 0 0 0 0.1em var(--checkbox-checked);
+	border-radius: 0.05em;
+	background-color: #fff;
+}
+
+/* Checked */
+
+.checkbox:checked + .checkmark {
+	background-color: var(--checkbox-checked);
+	background-image: url('/checkbox/check.svg');
+}
+
+/* Focused */
+
+.checkbox:focus + .checkmark {
+	box-shadow:
+		0 0 0 0.1em var(--checkbox-checked),
+		0 0 0 0.2em var(--checkbox-focused);
+}
+
+/* Disabled */
+
+.checkbox:disabled + .checkmark {
+	box-shadow: 0 0 0 0.1em var(--checkbox-disabled);
+}
+
+.checkbox:checked:disabled + .checkmark {
+	background-color: var(--checkbox-disabled);
+}
