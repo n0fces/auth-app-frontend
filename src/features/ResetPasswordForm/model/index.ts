@@ -3,29 +3,27 @@ import { ErrorResponseData } from '@/shared/types/errorResponseData';
 import { AxiosError } from 'axios';
 import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { useParams } from 'react-router-dom';
 
 type FormData = {
 	password: string;
 	confirmedPassword: string;
-	logoutCheckbox: boolean;
+	logoutAllDevices: boolean;
 };
 
-export const useResetPasswordForm = () => {
+export const useResetPasswordForm = (token?: string) => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [isSubmitted, setIsSubmitted] = useState(false);
-	const { token } = useParams();
 	const { register, handleSubmit, formState, getValues, reset, setError } =
 		useForm<FormData>({ criteriaMode: 'all' });
 
 	const onSubmit: SubmitHandler<FormData> = async (data) => {
-		const { password, logoutCheckbox } = data;
+		const { password, logoutAllDevices } = data;
 		try {
 			setIsLoading(true);
 			await AuthService.resetPassword(
 				token as string,
 				password,
-				logoutCheckbox,
+				logoutAllDevices,
 			);
 			setIsSubmitted(true);
 			reset();
@@ -58,7 +56,7 @@ export const useResetPasswordForm = () => {
 			return password === value || 'Passwords should match!';
 		},
 	});
-	const checkboxRegister = register('logoutCheckbox');
+	const checkboxRegister = register('logoutAllDevices');
 
 	return {
 		handleSubmit: handleSubmit(onSubmit),

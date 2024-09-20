@@ -3,8 +3,14 @@ import { Button } from '@/shared/ui/Button';
 import { Checkbox } from '@/shared/ui/Checkbox';
 import { Text } from '@/shared/ui/Text';
 import { useResetPasswordForm } from '../model';
+import { Link } from 'react-router-dom';
+import { routeMap } from '@/shared/config/route-map';
 
-export const ResetPasswordForm = () => {
+interface ResetPasswordFormProps {
+	token?: string;
+}
+
+export const ResetPasswordForm = ({ token }: ResetPasswordFormProps) => {
 	const {
 		inputPasswordRegister,
 		confirmedPasswordRegister,
@@ -12,7 +18,7 @@ export const ResetPasswordForm = () => {
 		formState: { errors, isDirty, isValid },
 		isLoading,
 		isSubmitted,
-	} = useResetPasswordForm();
+	} = useResetPasswordForm(token);
 
 	const disabled = !isDirty || !isValid;
 	return (
@@ -54,6 +60,12 @@ export const ResetPasswordForm = () => {
 			{errors.root && (
 				<Text role="alert" color="error" size="small" align="center">
 					{errors.root.serverError.message}
+				</Text>
+			)}
+			{isSubmitted && (
+				<Text align="center" color="primary">
+					Awesome! We updated your password. Let's{' '}
+					<Link to={routeMap.signin}>log in</Link>
 				</Text>
 			)}
 		</form>

@@ -4,5 +4,5 @@ export const routeMap = {
 	signin: '/signin',
 	gallery: '/gallery',
 	forgot: '/forgot-password',
-	reset: '/reset-password',
+	reset: '/reset-password/:token',
 };
