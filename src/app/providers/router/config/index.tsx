@@ -7,6 +7,8 @@ import { createBrowserRouter } from 'react-router-dom';
 import { Root } from '../ui/Root';
 import { ProtectedRoute } from '../ui/ProtectedRoute';
 import { GalleryPage } from '@/pages/GalleryPage';
+import { ForgotPasswordPage } from '@/pages/ForgotPasswordPage';
+import { ResetPasswordPage } from '@/pages/ResetPasswordPage';
 
 export const router = createBrowserRouter([
 	{
@@ -46,5 +48,13 @@ export const router = createBrowserRouter([
 				],
 			},
 		],
+	},
+	{
+		path: routeMap.forgot,
+		element: <ForgotPasswordPage />,
+	},
+	{
+		path: routeMap.reset,
+		element: <ResetPasswordPage />,
 	},
 ]);

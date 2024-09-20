@@ -3,7 +3,6 @@
 	justify-content: center;
 	align-items: center;
 	border-radius: var(--border-radius-form-comp);
-	color: #fff;
 }
 
 .submit,
@@ -12,6 +11,7 @@
 .google,
 .logout,
 .disabled {
+	color: #fff;
 	height: 2.5rem;
 	padding: 0rem 1rem;
 }

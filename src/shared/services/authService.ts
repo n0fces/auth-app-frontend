@@ -10,6 +10,24 @@ export class AuthService {
 		return authApi.post<UserDTO>('/login', { email, password });
 	}
 
+	static async forgotPassword(email: string) {
+		return authApi.post('/forgot-password', {
+			email,
+		});
+	}
+
+	static async resetPassword(
+		token: string,
+		password: string,
+		logoutCheckbox: boolean,
+	) {
+		return authApi.post('/reset-password', {
+			token,
+			password,
+			logoutCheckbox,
+		});
+	}
+
 	static async logout() {
 		return authApi.post('/logout');
 	}

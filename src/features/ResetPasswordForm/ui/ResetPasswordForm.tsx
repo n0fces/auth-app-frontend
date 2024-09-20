@@ -1,42 +1,26 @@
 import { InputPassword } from '@/entities/InputPassword';
-import { routeMap } from '@/shared/config/route-map';
 import { Button } from '@/shared/ui/Button';
-import { Input } from '@/shared/ui/Input';
+import { Checkbox } from '@/shared/ui/Checkbox';
 import { Text } from '@/shared/ui/Text';
-import { Link } from 'react-router-dom';
-import { useSignInForm } from '../model';
+import { useResetPasswordForm } from '../model';
 
-export const SignInForm = () => {
+export const ResetPasswordForm = () => {
 	const {
-		emailRegister,
 		inputPasswordRegister,
+		confirmedPasswordRegister,
 		handleSubmit,
-		isLoading,
 		formState: { errors, isDirty, isValid },
+		isLoading,
 		isSubmitted,
-	} = useSignInForm();
+	} = useResetPasswordForm();
 
 	const disabled = !isDirty || !isValid;
-
 	return (
 		<form className="form" autoComplete="on" onSubmit={handleSubmit}>
-			<Input
-				type="email"
-				placeholder="Email"
-				aria-label="Email"
-				autoComplete="email"
-				aria-invalid={errors.email ? 'true' : 'false'}
-				{...emailRegister}
-			/>
-			{errors.email && (
-				<Text role="alert" color="error" size="small">
-					{errors.email.message}
-				</Text>
-			)}
 			<InputPassword
-				placeholder="Password"
-				aria-label="Password"
-				autoComplete="current-password"
+				placeholder="Set a new password"
+				aria-label="Set a new password"
+				autoComplete="new-password"
 				aria-invalid={errors.password ? 'true' : 'false'}
 				{...inputPasswordRegister}
 			/>
@@ -45,24 +29,33 @@ export const SignInForm = () => {
 					{errors.password.message}
 				</Text>
 			)}
-			<Text align="center" size="small">
-				<Link to={routeMap.forgot}>Forgot Password?</Link>
-			</Text>
+			<InputPassword
+				placeholder="Confirm a new password"
+				aria-label="Confirm a new password"
+				autoComplete="new-password"
+				aria-invalid={errors.confirmedPassword ? 'true' : 'false'}
+				{...confirmedPasswordRegister}
+			/>
+			{errors.confirmedPassword && (
+				<Text role="alert" color="error" size="small">
+					{errors.confirmedPassword.message}
+				</Text>
+			)}
+			<div>
+				<Checkbox label="Log out from all devices?" />
+			</div>
 			<Button
 				type={isSubmitted ? 'button' : 'submit'}
 				variant={isSubmitted ? 'submitted' : disabled ? 'disabled' : 'submit'}
 				disabled={disabled || isSubmitted}
 				isLoading={isLoading}>
-				Sign In
+				Set a new password
 			</Button>
 			{errors.root && (
 				<Text role="alert" color="error" size="small" align="center">
 					{errors.root.serverError.message}
 				</Text>
 			)}
-			<Text align="center" color="secondary" size="small">
-				Don't have an account? <Link to={routeMap.signup}>Sign Up</Link>
-			</Text>
 		</form>
 	);
 };

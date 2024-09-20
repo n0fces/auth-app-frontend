@@ -3,4 +3,6 @@ export const routeMap = {
 	signup: '/signup',
 	signin: '/signin',
 	gallery: '/gallery',
+	forgot: '/forgot-password',
+	reset: '/reset-password',
 };
