@@ -5,6 +5,7 @@ import { Text } from '@/shared/ui/Text';
 import { useResetPasswordForm } from '../model';
 import { Link } from 'react-router-dom';
 import { routeMap } from '@/shared/config/route-map';
+import { ResendForgotPassword } from './ResendForgotPassword';
 
 interface ResetPasswordFormProps {
 	token?: string;
@@ -58,9 +59,15 @@ export const ResetPasswordForm = ({ token }: ResetPasswordFormProps) => {
 				Set a new password
 			</Button>
 			{errors.root && (
-				<Text role="alert" color="error" size="small" align="center">
-					{errors.root.serverError.message}
-				</Text>
+				<>
+					<Text role="alert" color="error" size="small" align="center">
+						{errors.root.serverError.message}
+					</Text>
+					{/* не очень реализация */}
+					{errors.root.serverError.type === '410' && (
+						<ResendForgotPassword token={token as string} />
+					)}
+				</>
 			)}
 			{isSubmitted && (
 				<Text align="center" color="primary">

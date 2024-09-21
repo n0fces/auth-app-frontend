@@ -69,16 +69,13 @@ authApi.interceptors.response.use(
 				});
 			}
 		}
-		// throw error;
-		// return serverError.response?.data.name === 'UnauthorizedError'
-		// 	? Promise.resolve()
-		// 	: Promise.reject(error);
 
 		if (serverError.response?.data.name === 'UnauthorizedError') {
-			return Promise.resolve(); // Не бросаем ошибку, скрываем её
+			// Не бросаем ошибку, скрываем её
+			return Promise.resolve();
+		} else {
+			// Все остальные ошибки передаем дальше для обработки
+			return Promise.reject(error);
 		}
-
-		// Все остальные ошибки передаем дальше для обработки
-		return Promise.reject(error);
 	},
 );

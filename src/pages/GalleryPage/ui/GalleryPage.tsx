@@ -29,7 +29,7 @@ export const GalleryPage = () => {
 					<Fallback amount={10} />
 				) : (
 					dogs?.map((dog) => (
-						<Card alignItems="center" justifyContent="center">
+						<Card alignItems="center" justifyContent="center" key={dog.id}>
 							<figure>
 								<Image
 									width={200}

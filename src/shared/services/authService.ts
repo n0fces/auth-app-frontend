@@ -16,6 +16,12 @@ export class AuthService {
 		});
 	}
 
+	static async resendForgotPassword(token: string) {
+		return authApi.post('/resend-forgot-password', {
+			token,
+		});
+	}
+
 	static async resetPassword(
 		token: string,
 		password: string,
