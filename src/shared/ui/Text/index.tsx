@@ -1,6 +1,7 @@
-import { HTMLAttributes } from 'react';
-import styles from './styles.module.scss';
 import { clsx } from 'clsx';
+import { HTMLAttributes } from 'react';
+
+import styles from './styles.module.scss';
 
 type TextSize = 'small' | 'regular';
 type ColorType = 'primary' | 'secondary' | 'error';

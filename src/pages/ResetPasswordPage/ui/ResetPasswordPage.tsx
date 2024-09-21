@@ -1,8 +1,10 @@
+import { useParams } from 'react-router-dom';
+
 import { SignCard } from '@/entities/SignCard';
 import { ResetPasswordForm } from '@/features/ResetPasswordForm';
 import { Page } from '@/widgets/Page';
+
 import styles from './styles.module.scss';
-import { useParams } from 'react-router-dom';
 
 export const ResetPasswordPage = () => {
 	const { token } = useParams();

@@ -1,6 +1,7 @@
-import { forwardRef, InputHTMLAttributes } from 'react';
-import styles from './styles.module.scss';
 import { clsx } from 'clsx';
+import { InputHTMLAttributes, forwardRef } from 'react';
+
+import styles from './styles.module.scss';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	fullWidth?: boolean;

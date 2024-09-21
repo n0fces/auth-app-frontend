@@ -1,6 +1,7 @@
+import { useState } from 'react';
+
 import { AuthService } from '@/shared/services/authService';
 import { Button } from '@/shared/ui/Button';
-import { useState } from 'react';
 
 interface ResendForgotPasswordProps {
 	token: string;

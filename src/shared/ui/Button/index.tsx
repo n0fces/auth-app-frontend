@@ -1,7 +1,8 @@
-import { ButtonHTMLAttributes } from 'react';
-import styles from './styles.module.scss';
 import { clsx } from 'clsx';
+import { ButtonHTMLAttributes } from 'react';
+
 import { Spinner } from '../Spinner';
+import styles from './styles.module.scss';
 
 type ButtonVariants =
 	| 'submit'

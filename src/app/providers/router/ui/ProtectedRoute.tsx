@@ -1,6 +1,7 @@
+import { Navigate, Outlet } from 'react-router-dom';
+
 import { routeMap } from '@/shared/config/route-map';
 import { useSession } from '@/shared/hooks/useSession';
-import { Navigate, Outlet } from 'react-router-dom';
 
 interface ProtectedRouteProps {
 	isAuthOnly?: boolean;

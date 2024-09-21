@@ -1,6 +1,7 @@
+import { createContext, useEffect, useState } from 'react';
+
 import { AuthService } from '@/shared/services/authService';
 import { UserDTO } from '@/shared/types/userDTO';
-import { createContext, useEffect, useState } from 'react';
 
 interface UserContextProps {
 	user: UserDTO | null;

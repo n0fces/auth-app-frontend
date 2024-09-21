@@ -1,7 +1,9 @@
+import { MouseEvent, forwardRef, useState } from 'react';
+
 import { Button } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';
 import { Input, InputProps } from '@/shared/ui/Input';
-import { forwardRef, MouseEvent, useState } from 'react';
+
 import styles from './styles.module.scss';
 
 type InputPasswordProps = Omit<InputProps, 'type'>;

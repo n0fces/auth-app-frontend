@@ -1,8 +1,9 @@
+import { useNavigate } from 'react-router-dom';
+
 import { routeMap } from '@/shared/config/route-map';
 import { useSession } from '@/shared/hooks/useSession';
 import { AuthService } from '@/shared/services/authService';
 import { Button } from '@/shared/ui/Button';
-import { useNavigate } from 'react-router-dom';
 
 interface LogoutProps {
 	className?: string;

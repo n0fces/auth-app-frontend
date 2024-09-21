@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import { AuthService } from '../services/authService';
 
 const DATA_API_URL = import.meta.env.VITE_DATA_API_URL;

@@ -1,7 +1,9 @@
-import { Page } from '@/widgets/Page';
 import { Link, useRouteError } from 'react-router-dom';
-import styles from './styles.module.scss';
+
 import { routeMap } from '@/shared/config/route-map';
+import { Page } from '@/widgets/Page';
+
+import styles from './styles.module.scss';
 
 export const ErrorPage = () => {
 	const error = useRouteError() as Error;

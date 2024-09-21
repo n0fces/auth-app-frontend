@@ -1,10 +1,12 @@
-import { ReactNode } from 'react';
-import styles from './styles.module.scss';
-import { Title } from '@/shared/ui/Title';
-import { Card } from '@/shared/ui/Card';
-import { useNavigate } from 'react-router-dom';
-import { Button } from '@/shared/ui/Button';
 import { clsx } from 'clsx';
+import { ReactNode } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { Button } from '@/shared/ui/Button';
+import { Card } from '@/shared/ui/Card';
+import { Title } from '@/shared/ui/Title';
+
+import styles from './styles.module.scss';
 
 interface SignCardProps {
 	sign: string;
@@ -35,7 +37,7 @@ export const SignCard = ({
 				</Button>
 			)}
 			<div className={styles.signCardCnt}>
-				<Title size='medium'>{sign}</Title>
+				<Title size="medium">{sign}</Title>
 				<div>{formComp}</div>
 				{oauthComp && (
 					<>

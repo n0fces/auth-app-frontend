@@ -1,14 +1,16 @@
+import { createBrowserRouter } from 'react-router-dom';
+
 import { ErrorPage } from '@/pages/ErrorPage';
+import { ForgotPasswordPage } from '@/pages/ForgotPasswordPage';
+import { GalleryPage } from '@/pages/GalleryPage';
 import { MainPage } from '@/pages/MainPage';
+import { ResetPasswordPage } from '@/pages/ResetPasswordPage';
 import { SignInPage } from '@/pages/SignInPage';
 import { SignUpPage } from '@/pages/SignUpPage';
 import { routeMap } from '@/shared/config/route-map';
-import { createBrowserRouter } from 'react-router-dom';
-import { Root } from '../ui/Root';
+
 import { ProtectedRoute } from '../ui/ProtectedRoute';
-import { GalleryPage } from '@/pages/GalleryPage';
-import { ForgotPasswordPage } from '@/pages/ForgotPasswordPage';
-import { ResetPasswordPage } from '@/pages/ResetPasswordPage';
+import { Root } from '../ui/Root';
 
 export const router = createBrowserRouter([
 	{

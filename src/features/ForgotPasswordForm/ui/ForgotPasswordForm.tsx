@@ -1,6 +1,7 @@
 import { Button } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
 import { Text } from '@/shared/ui/Text';
+
 import { useForgotPasswordForm } from '../model';
 
 export const ForgotPasswordForm = () => {

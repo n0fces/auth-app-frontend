@@ -1,5 +1,6 @@
 import { clsx } from 'clsx';
 import { HTMLAttributes } from 'react';
+
 import styles from './styles.module.scss';
 
 type AlignItemsType = 'left' | 'center' | 'right';

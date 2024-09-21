@@ -1,8 +1,9 @@
-import { AuthService } from '@/shared/services/authService';
-import { ErrorResponseData } from '@/shared/types/errorResponseData';
 import { AxiosError } from 'axios';
 import { useState } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
+
+import { AuthService } from '@/shared/services/authService';
+import { ErrorResponseData } from '@/shared/types/errorResponseData';
 
 type FormData = {
 	email: string;

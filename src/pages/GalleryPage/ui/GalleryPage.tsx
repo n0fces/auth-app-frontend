@@ -1,11 +1,13 @@
+import { useState } from 'react';
+
 import { DataService } from '@/shared/services/dataService';
 import { DogDTO } from '@/shared/types/dogDTO';
 import { Button } from '@/shared/ui/Button';
-import { useState } from 'react';
-import styles from './styles.module.scss';
 import { Card } from '@/shared/ui/Card';
-import { Fallback } from './Fallback';
 import { Image } from '@/shared/ui/Image';
+
+import { Fallback } from './Fallback';
+import styles from './styles.module.scss';
 
 export const GalleryPage = () => {
 	const [dogs, setDogs] = useState<DogDTO[]>();

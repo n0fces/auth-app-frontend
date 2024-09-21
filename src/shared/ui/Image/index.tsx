@@ -1,5 +1,6 @@
 import { clsx } from 'clsx';
 import { ImgHTMLAttributes } from 'react';
+
 import styles from './styles.module.scss';
 
 export const Image = ({

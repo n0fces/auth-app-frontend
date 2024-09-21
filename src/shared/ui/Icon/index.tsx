@@ -1,5 +1,6 @@
-import { IconName } from '@/shared/types/iconNames';
 import { SVGProps } from 'react';
+
+import { IconName } from '@/shared/types/iconNames';
 
 interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'name'> {
 	name: IconName;

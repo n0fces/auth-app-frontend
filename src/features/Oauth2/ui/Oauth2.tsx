@@ -1,7 +1,9 @@
-import { Button } from '@/shared/ui/Button';
-import styles from './styles.module.scss';
-import { Icon } from '@/shared/ui/Icon';
 import { clsx } from 'clsx';
+
+import { Button } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
+
+import styles from './styles.module.scss';
 
 export const Oauth2 = () => {
 	return (

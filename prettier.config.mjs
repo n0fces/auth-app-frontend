@@ -10,6 +10,10 @@ const config = {
 	arrowParens: 'always',
 	trailingComma: 'all',
 	bracketSameLine: true,
+	plugins: ['@trivago/prettier-plugin-sort-imports'],
+	importOrder: ['<THIRD_PARTY_MODULES>', '^[@]', '^[.]', '.scss$'],
+	importOrderSeparation: true,
+	importOrderSortSpecifiers: true,
 	overrides: [
 		{
 			files: '*.svg',

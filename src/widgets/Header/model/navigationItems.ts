@@ -1,6 +1,7 @@
-import { useSession } from '@/shared/hooks/useSession';
-import { NavigationItem } from '../types';
 import { routeMap } from '@/shared/config/route-map';
+import { useSession } from '@/shared/hooks/useSession';
+
+import { NavigationItem } from '../types';
 
 export const useNavigationItems = () => {
 	const context = useSession();

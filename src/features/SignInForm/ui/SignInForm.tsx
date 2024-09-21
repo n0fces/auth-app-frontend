@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom';
+
 import { InputPassword } from '@/entities/InputPassword';
 import { routeMap } from '@/shared/config/route-map';
 import { Button } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
 import { Text } from '@/shared/ui/Text';
-import { Link } from 'react-router-dom';
+
 import { useSignInForm } from '../model';
 
 export const SignInForm = () => {

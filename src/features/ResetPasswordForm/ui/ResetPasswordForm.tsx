@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom';
+
 import { InputPassword } from '@/entities/InputPassword';
+import { routeMap } from '@/shared/config/route-map';
 import { Button } from '@/shared/ui/Button';
 import { Checkbox } from '@/shared/ui/Checkbox';
 import { Text } from '@/shared/ui/Text';
+
 import { useResetPasswordForm } from '../model';
-import { Link } from 'react-router-dom';
-import { routeMap } from '@/shared/config/route-map';
 import { ResendForgotPassword } from './ResendForgotPassword';
 
 interface ResetPasswordFormProps {

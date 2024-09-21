@@ -1,6 +1,7 @@
 import { clsx } from 'clsx';
-import styles from './styles.module.scss';
 import { InputHTMLAttributes } from 'react';
+
+import styles from './styles.module.scss';
 
 interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
 	label?: string;
