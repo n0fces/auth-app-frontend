@@ -17,15 +17,14 @@
 
 .goBack {
 	align-self: flex-start;
-
 	color: var(--secondary-color-text);
 
 	&:hover,
 	&:focus {
-		color: currentColor;
+		color: currentcolor;
 	}
 
-	@media (min-width: 769px) {
+	@media (width >= 769px) {
 		position: absolute;
 		top: 1.25rem;
 		left: 1.25rem;
@@ -45,12 +44,12 @@
 	&::after,
 	&::before {
 		content: '';
-		height: 0.03125rem;
+		height: 0.0313rem;
 		width: calc(50% - 1rem);
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
-		background-color: currentColor;
+		background-color: currentcolor;
 	}
 
 	&::after {

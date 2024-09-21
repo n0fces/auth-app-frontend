@@ -15,17 +15,17 @@ textarea {
 	font-size: inherit;
 }
 
+a {
+	color: var(--link-color);
+	text-decoration: none;
+}
+
 a:hover,
 a:focus,
 a:active {
 	outline: none;
 	color: var(--link-color-interacted);
 	text-decoration: underline;
-}
-
-a {
-	color: var(--link-color);
-	text-decoration: none;
 }
 
 .form {
@@ -50,6 +50,7 @@ a {
 	0% {
 		background-position: 0% 0%;
 	}
+
 	100% {
 		background-position: -135% 0%;
 	}

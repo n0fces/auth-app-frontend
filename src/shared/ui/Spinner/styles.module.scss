@@ -1,6 +1,6 @@
 .spinner {
 	border-style: solid;
-	border-color: currentColor;
+	border-color: currentcolor;
 	border-left-color: transparent;
 	border-radius: 50%;
 	animation: loader 1s linear infinite;
@@ -10,6 +10,7 @@
 	from {
 		transform: rotate(0deg);
 	}
+
 	to {
 		transform: rotate(360deg);
 	}
