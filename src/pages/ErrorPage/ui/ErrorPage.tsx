@@ -1,7 +1,8 @@
 import { Link, useRouteError } from 'react-router-dom';
 
-import { routeMap } from '@/shared/config/route-map';
 import { Page } from '@/widgets/Page';
+
+import { routeMap } from '@/shared/config/route-map';
 
 import styles from './styles.module.scss';
 

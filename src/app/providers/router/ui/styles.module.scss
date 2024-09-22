@@ -1,13 +1,14 @@
 .app {
-	min-height: 100vh;
-	padding: var(--layout-gap);
 	display: grid;
+
 	grid-template-areas:
 		'header content'
 		'footer footer';
-	grid-template-columns: min-content 1fr;
 	grid-template-rows: 1fr 2.5rem;
+	grid-template-columns: min-content 1fr;
 	gap: var(--layout-gap);
+	min-height: 100vh;
+	padding: var(--layout-gap);
 }
 
 .main {

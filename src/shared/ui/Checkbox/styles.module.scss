@@ -1,7 +1,8 @@
 .label {
 	display: inline-flex;
-	align-items: center;
+
 	column-gap: 0.5em;
+	align-items: center;
 }
 
 .checkbox {
@@ -12,9 +13,9 @@
 .checkmark {
 	width: 0.6em;
 	height: 0.6em;
-	box-shadow: 0 0 0 0.1em var(--checkbox-checked);
-	border-radius: 0.05em;
 	background-color: #fff;
+	border-radius: 0.05em;
+	box-shadow: 0 0 0 0.1em var(--checkbox-checked);
 }
 
 /* Checked */

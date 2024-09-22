@@ -7,6 +7,7 @@ import { MainPage } from '@/pages/MainPage';
 import { ResetPasswordPage } from '@/pages/ResetPasswordPage';
 import { SignInPage } from '@/pages/SignInPage';
 import { SignUpPage } from '@/pages/SignUpPage';
+
 import { routeMap } from '@/shared/config/route-map';
 
 import { ProtectedRoute } from '../ui/ProtectedRoute';

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import { InputPassword } from '@/entities/InputPassword';
+
 import { routeMap } from '@/shared/config/route-map';
 import { Button } from '@/shared/ui/Button';
 import { Checkbox } from '@/shared/ui/Checkbox';

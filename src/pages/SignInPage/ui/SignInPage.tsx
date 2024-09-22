@@ -1,7 +1,9 @@
-import { SignCard } from '@/entities/SignCard';
+import { Page } from '@/widgets/Page';
+
 import { Oauth2 } from '@/features/Oauth2/ui/Oauth2';
 import { SignInForm } from '@/features/SignInForm';
-import { Page } from '@/widgets/Page';
+
+import { SignCard } from '@/entities/SignCard';
 
 export const SignInPage = () => {
 	return (

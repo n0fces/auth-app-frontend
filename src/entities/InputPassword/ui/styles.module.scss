@@ -1,34 +1,35 @@
 .inputCnt {
 	display: inline-block;
+
 	position: relative;
 }
 
 .inputPass {
-	padding-right: 2.5rem;
 	width: 100%;
+	padding-right: 2.5rem;
 }
 
 .eye,
 .crossedEye {
-	stroke: var(--secondary-color-text);
 	fill: var(--secondary-color-text);
+	stroke: var(--secondary-color-text);
 }
 
 .eyeBtn {
 	position: absolute;
-	right: 1rem;
 	top: 50%;
-	transform: translateY(-50%);
+	right: 1rem;
 	width: 1rem;
 	height: 1rem;
 	outline: none;
+	transform: translateY(-50%);
 
 	&:hover,
 	&:focus {
 		.eye,
 		.crossedEye {
-			stroke: var(--main-color-text);
 			fill: var(--main-color-text);
+			stroke: var(--main-color-text);
 		}
 	}
 }

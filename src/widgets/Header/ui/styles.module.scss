@@ -1,19 +1,20 @@
 .header {
-	padding: 1rem;
-	height: 50vh;
 	width: 7.5rem;
+	height: 50vh;
+	padding: 1rem;
 }
 
 .navigate {
 	display: flex;
+
 	flex-direction: column;
-	height: 25%;
-	justify-content: space-between;
 	align-items: center;
+	justify-content: space-between;
+	height: 25%;
 }
 
 .logout {
+	align-self: stretch;
 	margin-top: auto;
 	white-space: nowrap;
-	align-self: stretch;
 }

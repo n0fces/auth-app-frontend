@@ -1,6 +1,8 @@
-import { SignCard } from '@/entities/SignCard';
-import { ForgotPasswordForm } from '@/features/ForgotPasswordForm';
 import { Page } from '@/widgets/Page';
+
+import { ForgotPasswordForm } from '@/features/ForgotPasswordForm';
+
+import { SignCard } from '@/entities/SignCard';
 
 import styles from './styles.module.scss';
 

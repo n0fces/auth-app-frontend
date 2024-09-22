@@ -32,8 +32,9 @@
 }
 
 .breakLine {
-	font-size: 1rem;
 	text-align: center;
+	font-size: 1rem;
+
 	position: relative;
 	color: var(--secondary-color-text);
 
@@ -43,13 +44,13 @@
 
 	&::after,
 	&::before {
-		content: '';
-		height: 0.0313rem;
-		width: calc(50% - 1rem);
 		position: absolute;
 		top: 50%;
-		transform: translateY(-50%);
+		width: calc(50% - 1rem);
+		height: 0.0313rem;
+		content: '';
 		background-color: currentcolor;
+		transform: translateY(-50%);
 	}
 
 	&::after {
