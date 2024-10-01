@@ -10,7 +10,7 @@ export const authApi = axios.create({
 	// за счет того, что я храню токены в cookies, то мне не нужно
 	// писать interceptоры request, чтобы цеплять access token
 	withCredentials: true,
-	baseURL: SERVER_URL,
+	baseURL: `${SERVER_URL}/auth`,
 });
 
 // интерцептер, который нужен, чтобы обновлять аксесс токен, если рефреш еще норм
