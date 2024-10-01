@@ -3,12 +3,12 @@ import axios from 'axios';
 import { AuthService } from '../services/authService';
 
 const DATA_API_URL = import.meta.env.VITE_DATA_API_URL;
-const UNSPLASH_ACCESS_KEY = import.meta.env.VITE_DOG_API_ACCESS_KEY;
+const DOG_API_ACCESS_KEY = import.meta.env.VITE_DOG_API_ACCESS_KEY;
 
 export const dataApi = axios.create({
 	baseURL: DATA_API_URL,
 	headers: {
-		'x-api-key': UNSPLASH_ACCESS_KEY,
+		'x-api-key': DOG_API_ACCESS_KEY,
 	},
 });
 
