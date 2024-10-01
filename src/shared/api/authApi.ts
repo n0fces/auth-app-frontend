@@ -31,7 +31,7 @@ authApi.interceptors.response.use(
 			// * если ошибка соответстует тому, что access токен именно протух, то мы будем пытаться его обновить
 			if (serverError.response?.data.name === 'AccessTokenExpired') {
 				try {
-					await axios.get(`${SERVER_URL}/access`, {
+					await axios.get(`${SERVER_URL}/auth/access`, {
 						withCredentials: true,
 					});
 					return authApi.request(originalRequest);
@@ -45,7 +45,7 @@ authApi.interceptors.response.use(
 						// * то бесшовно обновляем два токена
 						const data = useSession();
 						if (data?.user) {
-							await axios.get(`${SERVER_URL}/refresh`, {
+							await axios.get(`${SERVER_URL}/auth/refresh`, {
 								withCredentials: true,
 							});
 							return authApi.request(originalRequest);
@@ -58,14 +58,14 @@ authApi.interceptors.response.use(
 						// ! возможно что-то связанное с блэк листами
 						// ! очистить все возможные куки, которые устанавливает сервер
 						// ! залогировать это дело
-						return await axios.get(`${SERVER_URL}/logout`, {
+						return await axios.get(`${SERVER_URL}/auth/logout`, {
 							withCredentials: true,
 						});
 					}
 				}
 			} else if (serverError.response?.data.name === 'AccessTokenInvalid') {
 				// * если access токен невалидный, то мы будем пытаться его удалить и залогиниться заново
-				return await axios.get(`${SERVER_URL}/logout`, {
+				return await axios.get(`${SERVER_URL}/auth/logout`, {
 					withCredentials: true,
 				});
 			}
