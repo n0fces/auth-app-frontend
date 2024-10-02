@@ -1,12 +1,13 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 
 import { AuthService } from '@/shared/services/authService';
 import { UserDTO } from '@/shared/types/userDTO';
 
 interface UserContextProps {
 	user: UserDTO | null;
-	// isLoading: boolean;
+	isLoading: boolean;
 	setUser: React.Dispatch<React.SetStateAction<UserDTO | null>>;
+	init: () => void
 }
 
 export const UserContext = createContext<UserContextProps | null>(null);
@@ -19,21 +20,21 @@ const fetchUser = async () => await AuthService.getUser();
 
 export const UserProvider = ({ children }: UserProviderProps) => {
 	const [user, setUser] = useState<UserDTO | null>(null);
-	// const [isLoading, setIsLoading] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 
-	useEffect(() => {
-		// setIsLoading(true);
+	const init = () => {
 		fetchUser().then((response) => {
 			const res = response?.data;
 			if (res) setUser(res);
+			setIsLoading(false);
 		});
-		// setIsLoading(false);
-	}, []);
+	};
 
 	const value = {
 		user,
-		// isLoading,
+		isLoading,
 		setUser,
+		init,
 	};
 
 	return <UserContext.Provider value={value}>{children}</UserContext.Provider>;

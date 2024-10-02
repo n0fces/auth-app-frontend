@@ -2,9 +2,9 @@ import { clsx } from 'clsx';
 
 interface SkeletonProps {
 	className?: string;
-	width?: number;
-	height?: number;
-	borderRadius?: number;
+	width?: number | string;
+	height?: number | string;
+	borderRadius?: number | string;
 }
 
 export const Skeleton = ({

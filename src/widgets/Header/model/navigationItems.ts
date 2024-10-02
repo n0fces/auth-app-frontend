@@ -10,22 +10,26 @@ export const useNavigationItems = () => {
 		{
 			to: routeMap.root,
 			text: 'Main',
-			isAuthOnly: false,
+			// этот роут всегда будет доступен
+			isActive: true,
 		},
 		{
 			to: routeMap.signin,
 			text: 'Sign in',
-			isAuthOnly: Boolean(context?.user),
+			// этот роут будет доступен только когда пользователь не авторизован
+			isActive: !context?.user,
 		},
 		{
 			to: routeMap.signup,
 			text: 'Sign up',
-			isAuthOnly: Boolean(context?.user),
+			// этот роут будет доступен только когда пользователь не авторизован
+			isActive: !context?.user,
 		},
 		{
 			to: routeMap.gallery,
 			text: 'Gallery',
-			isAuthOnly: !context?.user,
+			// этот роут будет доступен только когда пользователь авторизован
+			isActive: !!context?.user,
 		},
 	];
 

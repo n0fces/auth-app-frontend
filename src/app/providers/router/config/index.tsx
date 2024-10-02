@@ -10,6 +10,7 @@ import { SignUpPage } from '@/pages/SignUpPage';
 
 import { routeMap } from '@/shared/config/route-map';
 
+import { MainLayout } from '../ui/MainLayout';
 import { ProtectedRoute } from '../ui/ProtectedRoute';
 import { Root } from '../ui/Root';
 
@@ -19,45 +20,50 @@ export const router = createBrowserRouter([
 		element: <Root />,
 		children: [
 			{
-				errorElement: <ErrorPage />,
+				element: <MainLayout />,
 				children: [
-					{ index: true, element: <MainPage /> },
 					{
-						element: <ProtectedRoute isAuthOnly={false} />,
+						errorElement: <ErrorPage />,
 						children: [
+							{ index: true, element: <MainPage /> },
 							{
-								path: routeMap.signin,
-								element: <SignInPage />,
+								element: <ProtectedRoute isAuthOnly={false} />,
+								children: [
+									{
+										path: routeMap.signin,
+										element: <SignInPage />,
+									},
+									{
+										path: routeMap.signup,
+										element: <SignUpPage />,
+									},
+								],
 							},
 							{
-								path: routeMap.signup,
-								element: <SignUpPage />,
+								element: <ProtectedRoute />,
+								children: [
+									{
+										path: routeMap.gallery,
+										element: <GalleryPage />,
+									},
+								],
+							},
+							{
+								path: '*',
+								element: <ErrorPage />,
 							},
 						],
-					},
-					{
-						element: <ProtectedRoute />,
-						children: [
-							{
-								path: routeMap.gallery,
-								element: <GalleryPage />,
-							},
-						],
-					},
-					{
-						path: '*',
-						element: <ErrorPage />,
 					},
 				],
 			},
+			{
+				path: routeMap.forgot,
+				element: <ForgotPasswordPage />,
+			},
+			{
+				path: routeMap.reset,
+				element: <ResetPasswordPage />,
+			},
 		],
-	},
-	{
-		path: routeMap.forgot,
-		element: <ForgotPasswordPage />,
-	},
-	{
-		path: routeMap.reset,
-		element: <ResetPasswordPage />,
 	},
 ]);
