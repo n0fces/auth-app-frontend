@@ -4,7 +4,7 @@ import { InputPassword } from '@/entities/InputPassword';
 
 import { routeMap } from '@/shared/config/route-map';
 import { Button } from '@/shared/ui/Button';
-import { Checkbox } from '@/shared/ui/Checkbox';
+// import { Checkbox } from '@/shared/ui/Checkbox';
 import { Text } from '@/shared/ui/Text';
 
 import { useResetPasswordForm } from '../model';
@@ -18,6 +18,7 @@ export const ResetPasswordForm = ({ token }: ResetPasswordFormProps) => {
 	const {
 		inputPasswordRegister,
 		confirmedPasswordRegister,
+		// checkboxRegister,
 		handleSubmit,
 		formState: { errors, isDirty, isValid },
 		isLoading,
@@ -51,9 +52,9 @@ export const ResetPasswordForm = ({ token }: ResetPasswordFormProps) => {
 					{errors.confirmedPassword.message}
 				</Text>
 			)}
-			<div>
-				<Checkbox label="Log out from all devices?" />
-			</div>
+			{/* <div>
+				<Checkbox label="Log out from all devices?" {...checkboxRegister} />
+			</div> */}
 			<Button
 				type={isSubmitted ? 'button' : 'submit'}
 				variant={isSubmitted ? 'submitted' : disabled ? 'disabled' : 'submit'}

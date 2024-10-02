@@ -25,7 +25,7 @@ export class AuthService {
 	static async resetPassword(
 		token: string,
 		password: string,
-		logoutAllDevices: boolean,
+		logoutAllDevices?: boolean,
 	) {
 		return authApi.post('/reset-password', {
 			token,

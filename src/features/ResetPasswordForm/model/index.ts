@@ -8,7 +8,7 @@ import { ErrorResponseData } from '@/shared/types/errorResponseData';
 type FormData = {
 	password: string;
 	confirmedPassword: string;
-	logoutAllDevices: boolean;
+	// logoutAllDevices: boolean;
 };
 
 export const useResetPasswordForm = (token?: string) => {
@@ -18,13 +18,17 @@ export const useResetPasswordForm = (token?: string) => {
 		useForm<FormData>({ criteriaMode: 'all' });
 
 	const onSubmit: SubmitHandler<FormData> = async (data) => {
-		const { password, logoutAllDevices } = data;
+		const {
+			password,
+			// logoutAllDevices
+		} = data;
+
 		try {
 			setIsLoading(true);
 			await AuthService.resetPassword(
 				token as string,
 				password,
-				logoutAllDevices,
+				// logoutAllDevices,
 			);
 			setIsSubmitted(true);
 			reset();
@@ -57,14 +61,14 @@ export const useResetPasswordForm = (token?: string) => {
 			return password === value || 'Passwords should match!';
 		},
 	});
-	const checkboxRegister = register('logoutAllDevices');
+	// const checkboxRegister = register('logoutAllDevices');
 
 	return {
 		handleSubmit: handleSubmit(onSubmit),
 		formState,
 		inputPasswordRegister,
 		confirmedPasswordRegister,
-		checkboxRegister,
+		// checkboxRegister,
 		isLoading,
 		isSubmitted,
 	};

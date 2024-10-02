@@ -7,7 +7,7 @@ interface UserContextProps {
 	user: UserDTO | null;
 	isLoading: boolean;
 	setUser: React.Dispatch<React.SetStateAction<UserDTO | null>>;
-	init: () => void
+	init: () => void;
 }
 
 export const UserContext = createContext<UserContextProps | null>(null);
