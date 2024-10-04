@@ -32,7 +32,11 @@ export const SignCard = ({
 			justifyContent="center"
 			className={clsx(styles.signCard, className)}>
 			{withGoBackBtn && (
-				<Button onClick={() => navigate(-1)} className={styles.goBack}>
+				<Button
+					onClick={() => {
+						navigate(-1);
+					}}
+					className={styles.goBack}>
 					Go back
 				</Button>
 			)}

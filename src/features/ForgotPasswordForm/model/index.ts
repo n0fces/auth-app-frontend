@@ -2,12 +2,12 @@ import { AxiosError } from 'axios';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
-import { AuthService } from '@/shared/services/authService';
+import { forgotPassword } from '@/shared/services/authService';
 import { ErrorResponseData } from '@/shared/types/errorResponseData';
 
-type FormData = {
+interface FormData {
 	email: string;
-};
+}
 
 export const useForgotPasswordForm = () => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -19,7 +19,7 @@ export const useForgotPasswordForm = () => {
 		const { email } = data;
 		try {
 			setIsLoading(true);
-			await AuthService.forgotPassword(email);
+			await forgotPassword(email);
 			setIsSubmitted(true);
 			reset();
 		} catch (error) {

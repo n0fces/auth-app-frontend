@@ -69,13 +69,13 @@ export const ResetPasswordForm = ({ token }: ResetPasswordFormProps) => {
 					</Text>
 					{/* не очень реализация */}
 					{errors.root.serverError.type === '410' && (
-						<ResendForgotPassword token={token as string} />
+						<ResendForgotPassword token={token!} />
 					)}
 				</>
 			)}
 			{isSubmitted && (
 				<Text align="center" color="primary">
-					Awesome! We updated your password. Let's{' '}
+					Awesome! We updated your password. Let&apos;s{' '}
 					<Link to={routeMap.signin}>log in</Link>
 				</Text>
 			)}

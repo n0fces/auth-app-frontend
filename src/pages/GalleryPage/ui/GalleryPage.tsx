@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { DataService } from '@/shared/services/dataService';
+import { getDogs } from '@/shared/services/dataService';
 import { DogDTO } from '@/shared/types/dogDTO';
 import { Button } from '@/shared/ui/Button';
 import { Card } from '@/shared/ui/Card';
@@ -14,7 +14,7 @@ export const GalleryPage = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const fetchRandomPicture = async () => {
 		setIsLoading(true);
-		const { data } = await DataService.getDogs(10);
+		const { data } = await getDogs(10);
 		setDogs(data);
 		setIsLoading(false);
 	};
@@ -37,10 +37,10 @@ export const GalleryPage = () => {
 									width={200}
 									height={200}
 									src={dog.url}
-									alt={dog.breeds?.[0]?.name || 'Dog'}
+									alt={dog.breeds[0]?.name || 'Dog'}
 								/>
 								<figcaption className={styles.figcaption}>
-									{dog.breeds?.[0]?.name || 'Dog'}
+									{dog.breeds[0]?.name || 'Dog'}
 								</figcaption>
 							</figure>
 						</Card>

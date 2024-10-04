@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
 
-import { AuthService } from '@/shared/services/authService';
+import { getUser } from '@/shared/services/authService';
 import { UserDTO } from '@/shared/types/userDTO';
 
 interface UserContextProps {
@@ -16,14 +16,14 @@ interface UserProviderProps {
 	children: React.ReactNode;
 }
 
-const fetchUser = async () => await AuthService.getUser();
+const fetchUser = async () => await getUser();
 
 export const UserProvider = ({ children }: UserProviderProps) => {
 	const [user, setUser] = useState<UserDTO | null>(null);
 	const [isLoading, setIsLoading] = useState(true);
 
 	const init = () => {
-		fetchUser().then((response) => {
+		void fetchUser().then((response) => {
 			const res = response?.data;
 			if (res) setUser(res);
 			setIsLoading(false);

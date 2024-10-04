@@ -64,7 +64,7 @@ export const SignInForm = () => {
 				</Text>
 			)}
 			<Text align="center" color="secondary" size="small">
-				Don't have an account? <Link to={routeMap.signup}>Sign Up</Link>
+				Don&apos;t have an account? <Link to={routeMap.signup}>Sign Up</Link>
 			</Text>
 		</form>
 	);

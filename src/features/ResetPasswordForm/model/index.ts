@@ -2,14 +2,14 @@ import { AxiosError } from 'axios';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
-import { AuthService } from '@/shared/services/authService';
+import { resetPassword } from '@/shared/services/authService';
 import { ErrorResponseData } from '@/shared/types/errorResponseData';
 
-type FormData = {
+interface FormData {
 	password: string;
 	confirmedPassword: string;
 	// logoutAllDevices: boolean;
-};
+}
 
 export const useResetPasswordForm = (token?: string) => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -25,8 +25,8 @@ export const useResetPasswordForm = (token?: string) => {
 
 		try {
 			setIsLoading(true);
-			await AuthService.resetPassword(
-				token as string,
+			await resetPassword(
+				token!,
 				password,
 				// logoutAllDevices,
 			);

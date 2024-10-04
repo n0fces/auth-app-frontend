@@ -12,9 +12,7 @@ export const InputPassword = forwardRef<HTMLInputElement, InputPasswordProps>(
 	(props, ref) => {
 		const [shownPassword, setShownPassword] = useState(false);
 
-		const toggleShownPassword = (
-			event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>,
-		) => {
+		const toggleShownPassword = (event: MouseEvent<HTMLButtonElement>) => {
 			event.preventDefault();
 			setShownPassword(!shownPassword);
 		};
@@ -28,7 +26,9 @@ export const InputPassword = forwardRef<HTMLInputElement, InputPasswordProps>(
 					{...props}
 				/>
 				<Button
-					onClick={(e) => toggleShownPassword(e)}
+					onClick={(e) => {
+						toggleShownPassword(e);
+					}}
 					className={styles.eyeBtn}>
 					{shownPassword ? (
 						<Icon name="eye" className={styles.eye} />

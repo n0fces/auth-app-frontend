@@ -5,13 +5,13 @@ import { useNavigate } from 'react-router-dom';
 
 import { routeMap } from '@/shared/config/route-map';
 import { useSession } from '@/shared/hooks/useSession';
-import { AuthService } from '@/shared/services/authService';
+import { login } from '@/shared/services/authService';
 import { ErrorResponseData } from '@/shared/types/errorResponseData';
 
-type FormData = {
+interface FormData {
 	email: string;
 	password: string;
-};
+}
 
 export const useSignInForm = () => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -26,7 +26,7 @@ export const useSignInForm = () => {
 		const { email, password } = data;
 		try {
 			setIsLoading(true);
-			const user = await AuthService.login(email, password);
+			const user = await login(email, password);
 			context?.setUser(user.data);
 			setIsSubmitted(true);
 			navigate(routeMap.root);

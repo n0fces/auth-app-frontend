@@ -2,10 +2,10 @@ import { AxiosError } from 'axios';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
-import { AuthService } from '@/shared/services/authService';
+import { registration } from '@/shared/services/authService';
 import { ErrorResponseData } from '@/shared/types/errorResponseData';
 
-type FormData = {
+interface FormData {
 	email: string;
 	password: string;
 	confirmedPassword: string;
@@ -21,7 +21,7 @@ export const useSignInForm = () => {
 		const { email, password } = data;
 		try {
 			setIsLoading(true);
-			await AuthService.registration(email, password);
+			await registration(email, password);
 			setIsSubmitted(true);
 			reset();
 		} catch (error) {

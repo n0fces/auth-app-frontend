@@ -9,9 +9,9 @@ export const Spinner = ({ radius }: SpinnerProps) => {
 		<div
 			className={styles.spinner}
 			style={{
-				width: `${2 * radius}px`,
-				height: `${2 * radius}px`,
-				borderWidth: `${radius * 0.2}px`,
+				width: `${String(2 * radius)}px`,
+				height: `${String(2 * radius)}px`,
+				borderWidth: `${String(radius * 0.2)}px`,
 			}}></div>
 	);
 };

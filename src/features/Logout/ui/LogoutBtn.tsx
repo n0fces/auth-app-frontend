@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { routeMap } from '@/shared/config/route-map';
 import { useSession } from '@/shared/hooks/useSession';
-import { AuthService } from '@/shared/services/authService';
+import { logout } from '@/shared/services/authService';
 import { Button } from '@/shared/ui/Button';
 
 interface LogoutProps {
@@ -14,7 +14,7 @@ export const LogoutBtn = ({ className }: LogoutProps) => {
 	const navigate = useNavigate();
 
 	const onLogout = async () => {
-		await AuthService.logout();
+		await logout();
 		data?.setUser(null);
 		navigate(routeMap.root);
 	};

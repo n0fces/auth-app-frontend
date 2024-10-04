@@ -1,52 +1,54 @@
+import { AxiosResponse } from 'axios';
+
 import { authApi } from '../api/authApi';
 import { UserDTO } from '../types/userDTO';
 
-export class AuthService {
-	static async registration(email: string, password: string) {
-		return authApi.post('/registration', { email, password });
-	}
+export const registration = async (email: string, password: string) => {
+	return authApi.post('/registration', { email, password });
+};
 
-	static async login(email: string, password: string) {
-		return authApi.post<UserDTO>('/login', { email, password });
-	}
+export const login = async (email: string, password: string) => {
+	return authApi.post<UserDTO>('/login', { email, password });
+};
 
-	static async forgotPassword(email: string) {
-		return authApi.post('/forgot-password', {
-			email,
-		});
-	}
+export const forgotPassword = async (email: string) => {
+	return authApi.post('/forgot-password', {
+		email,
+	});
+};
 
-	static async resendForgotPassword(token: string) {
-		return authApi.post('/resend-forgot-password', {
-			token,
-		});
-	}
+export const resendForgotPassword = async (token: string) => {
+	return authApi.post('/resend-forgot-password', {
+		token,
+	});
+};
 
-	static async resetPassword(
-		token: string,
-		password: string,
-		logoutAllDevices?: boolean,
-	) {
-		return authApi.post('/reset-password', {
-			token,
-			password,
-			logoutAllDevices,
-		});
-	}
+export const resetPassword = async (
+	token: string,
+	password: string,
+	logoutAllDevices?: boolean,
+) => {
+	return authApi.post('/reset-password', {
+		token,
+		password,
+		logoutAllDevices,
+	});
+};
 
-	static async logout() {
-		return authApi.post('/logout');
-	}
+export const logout = async () => {
+	return authApi.post('/logout');
+};
 
-	static async access() {
-		return authApi.post('/access');
-	}
+export const access = async () => {
+	return authApi.post('/access');
+};
 
-	static async checkAccess() {
-		return authApi.get('/check-access');
-	}
+export const checkAccess = async () => {
+	return authApi.get('/check-access');
+};
 
-	static async getUser() {
-		return authApi.get<UserDTO | null>('/get-user');
-	}
-}
+export const getUser = async (): Promise<
+	AxiosResponse<UserDTO> | undefined
+> => {
+	return authApi.get<UserDTO>('/get-user');
+};

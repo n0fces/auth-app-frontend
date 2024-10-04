@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { AuthService } from '@/shared/services/authService';
+import { resendForgotPassword } from '@/shared/services/authService';
 import { Button } from '@/shared/ui/Button';
 
 interface ResendForgotPasswordProps {
@@ -15,7 +15,7 @@ export const ResendForgotPassword = ({ token }: ResendForgotPasswordProps) => {
 	const onClick = async () => {
 		try {
 			setIsLoading(true);
-			await AuthService.resendForgotPassword(token);
+			await resendForgotPassword(token);
 			setIsClicked(true);
 		} catch (error) {
 			if (error instanceof Error) {
