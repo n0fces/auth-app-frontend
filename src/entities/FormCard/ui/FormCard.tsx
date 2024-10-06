@@ -8,7 +8,7 @@ import { Title } from '@/shared/ui/Title';
 
 import styles from './styles.module.scss';
 
-interface SignCardProps {
+interface FormCardProps {
 	sign: string;
 	formComp: ReactNode;
 	oauthComp?: ReactNode;
@@ -16,13 +16,13 @@ interface SignCardProps {
 	className?: string;
 }
 
-export const SignCard = ({
+export const FormCard = ({
 	formComp,
 	oauthComp,
 	sign,
 	withGoBackBtn = false,
 	className,
-}: SignCardProps) => {
+}: FormCardProps) => {
 	const navigate = useNavigate();
 
 	return (
@@ -37,7 +37,7 @@ export const SignCard = ({
 						navigate(-1);
 					}}
 					className={styles.goBack}>
-					Go back
+					Назад
 				</Button>
 			)}
 			<div className={styles.signCardCnt}>

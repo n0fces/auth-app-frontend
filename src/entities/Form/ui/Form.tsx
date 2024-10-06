@@ -1,17 +1,17 @@
 // import { Children, createElement, isValidElement } from 'react';
 // import { SubmitHandler, useForm } from 'react-hook-form';
 
-// interface FormSignProps<T extends FormData> {
+// interface FormProps<T extends FormData> {
 // 	children: React.ReactNode;
 // 	onSubmit: SubmitHandler<T>;
 // }
 
 // // ! здесь еще думать и думать над реализацией
 
-// export const FormSign = <T extends FormData>({
+// export const Form = <T extends FormData>({
 // 	children,
 // 	onSubmit,
-// }: FormSignProps<T>) => {
+// }: FormProps<T>) => {
 // 	const methods = useForm<T>();
 // 	const { handleSubmit } = methods;
 

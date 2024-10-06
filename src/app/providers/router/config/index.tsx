@@ -18,39 +18,31 @@ export const router = createBrowserRouter([
 	{
 		path: routeMap.root,
 		element: <Root />,
+		errorElement: <ErrorPage />,
 		children: [
 			{
 				element: <MainLayout />,
 				children: [
+					{ index: true, element: <MainPage /> },
 					{
-						errorElement: <ErrorPage />,
+						element: <ProtectedRoute isAuthOnly={false} />,
 						children: [
-							{ index: true, element: <MainPage /> },
 							{
-								element: <ProtectedRoute isAuthOnly={false} />,
-								children: [
-									{
-										path: routeMap.signin,
-										element: <SignInPage />,
-									},
-									{
-										path: routeMap.signup,
-										element: <SignUpPage />,
-									},
-								],
+								path: routeMap.signin,
+								element: <SignInPage />,
 							},
 							{
-								element: <ProtectedRoute />,
-								children: [
-									{
-										path: routeMap.gallery,
-										element: <GalleryPage />,
-									},
-								],
+								path: routeMap.signup,
+								element: <SignUpPage />,
 							},
+						],
+					},
+					{
+						element: <ProtectedRoute />,
+						children: [
 							{
-								path: '*',
-								element: <ErrorPage />,
+								path: routeMap.gallery,
+								element: <GalleryPage />,
 							},
 						],
 					},

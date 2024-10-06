@@ -20,21 +20,16 @@ authApi.interceptors.response.use(
 		// сохраняем исходный запрос пользователя даже в том случае, если аксесс токен просрочился.
 		// Когда мы обновим аксесс токен, то необходимо все равно сделать запрос пользователя,
 		// чтобы он вообще не заметил, что что-то там внутри произошло
-		const originalRequest = serverError.config as AxiosRequestConfig & {
-			_isRetry: boolean;
-		};
+		const originalRequest = serverError.config as AxiosRequestConfig;
 
-		if (serverError.status === 401 && !originalRequest._isRetry) {
-			// _isRetry нужен для того, чтобы избежать возможного повторного прохождения этой логики
-			// По работе приложения такого не должно происходить, но лучше перестраховаться
-			originalRequest._isRetry = true;
+		if (serverError.status === 401) {
 			//  если ошибка соответстует тому, что access токен именно протух, то мы будем пытаться его обновить
 			if (serverError.response?.data.name === 'AccessTokenExpired') {
 				try {
 					await axios.get(`${SERVER_URL}/auth/access`, {
 						withCredentials: true,
 					});
-					return axios.request(originalRequest);
+					return authApi.request(originalRequest);
 				} catch (error) {
 					const serverError = error as AxiosError<ErrorResponseData>;
 
@@ -46,7 +41,7 @@ authApi.interceptors.response.use(
 							await axios.get(`${SERVER_URL}/auth/refresh`, {
 								withCredentials: true,
 							});
-							return axios.request(originalRequest);
+							return authApi.request(originalRequest);
 						}
 					} else if (
 						serverError.response?.data.name === 'RefreshTokenInvalid'

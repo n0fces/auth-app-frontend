@@ -4,7 +4,7 @@ import { Page } from '@/widgets/Page';
 
 import { ResetPasswordForm } from '@/features/ResetPasswordForm';
 
-import { SignCard } from '@/entities/SignCard';
+import { FormCard } from '@/entities/FormCard';
 
 import styles from './styles.module.scss';
 
@@ -13,7 +13,7 @@ export const ResetPasswordPage = () => {
 
 	return (
 		<Page isCenter className={styles.page}>
-			<SignCard
+			<FormCard
 				sign="Reset Password"
 				formComp={<ResetPasswordForm token={token} />}
 				className={styles.card}

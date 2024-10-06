@@ -14,8 +14,12 @@ export const ErrorPage = () => {
 			<h1>Oops!</h1>
 			<p>Sorry, an unexpected error has occurred.</p>
 			<p>
-				<i>{error.message}</i>
-				<br />
+				{error.message && (
+					<>
+						<i>{error.message}</i>
+						<br />
+					</>
+				)}
 				<Link to={routeMap.root}>Go home page</Link>
 			</p>
 		</Page>
