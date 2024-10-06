@@ -7,12 +7,20 @@
 	display: grid;
 
 	grid-template-areas:
-		'header content'
-		'footer footer';
-	grid-template-rows: 1fr 2.5rem;
-	grid-template-columns: min-content 1fr;
+		'header'
+		'content'
+		'footer';
 	gap: var(--layout-gap);
+	grid-template-rows: min-content 1fr 2.5rem;
 	height: 100%;
+
+	@media (width >= 768px) {
+		grid-template-areas:
+			'header content'
+			'footer footer';
+		grid-template-rows: 1fr 2.5rem;
+		grid-template-columns: min-content 1fr;
+	}
 }
 
 .main {
