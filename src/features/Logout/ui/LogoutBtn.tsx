@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { routeMap } from '@/shared/config/route-map';
@@ -10,17 +11,24 @@ interface LogoutProps {
 }
 
 export const LogoutBtn = ({ className }: LogoutProps) => {
+	const [isLoading, setIsLoading] = useState(false);
 	const data = useSession();
 	const navigate = useNavigate();
 
 	const onLogout = async () => {
+		setIsLoading(true);
 		await logout();
 		data?.setUser(null);
+		setIsLoading(false);
 		navigate(routeMap.root);
 	};
 
 	return data?.user ? (
-		<Button variant="logout" onClick={onLogout} className={className}>
+		<Button
+			variant="logout"
+			isLoading={isLoading}
+			onClick={onLogout}
+			className={className}>
 			Log out
 		</Button>
 	) : null;
